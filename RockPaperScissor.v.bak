@@ -1,0 +1,67 @@
+module RockPaperScissor(
+input rock1, rock2, paper1, paper2, scissors1, scissors2,
+ 
+output reg [1:0] result,
+output [6:0] d
+
+); 
+
+integer score1 = 0; 
+integer score2 = 0;
+
+
+always@(*) 
+begin 
+
+
+
+
+
+
+
+if (rock1 == 1'b1 && scissors2 == 1'b1)
+begin
+result = 2'b01;
+score1 = score1 + 1;
+end 
+else if (paper1 == 1'b1 && rock2 == 1'b1)
+begin
+result = 2'b01;
+score1 = score1 + 1;
+end
+else if(scissors1 == 1'b1 && paper2 == 1'b1)
+begin 
+result = 2'b01;
+score1 = score1 + 1;
+end
+
+else if (rock2 == 1'b1 && scissors1 == 1'b1)
+begin
+result = 2'b10;
+score2 = score2 + 1;
+end 
+else if (paper2 == 1'b1 && rock1 == 1'b1)
+begin
+result = 2'b10;
+score2 = score2 + 1;
+end
+else if(scissors2 == 1'b1 && paper1 == 1'b1)
+begin 
+result = 2'b10;
+score2 = score2 + 1;
+end
+else 
+begin
+result = 2'b00;
+end
+
+end
+ProjectSeven sev(result, d);
+
+
+endmodule
+
+
+
+
+
