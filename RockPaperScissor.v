@@ -7,9 +7,9 @@ output [6:0] d,
 output reg[3:0]score1,
 output reg[3:0]score2,
 output[6:0] p1_score,
-output[6:0] p1_score_dig2,
+//output[6:0] p1_score_dig2,
 output[6:0] p2_score,
-output[6:0] p2_score_dig2
+//output[6:0] p2_score_dig2
 
 ); 
 
@@ -36,32 +36,38 @@ if (rock1 == 1'b1 && scissors2 == 1'b1)
 begin
 result <= 2'b01;
 score1 <= score1 + 4'b0001;
+score2 <= score2;
 end 
 else if (paper1 == 1'b1 && rock2 == 1'b1)
 begin
 result <= 2'b01;
 score1 <= score1 + 4'b0001;
+score2 <= score2;
 end
 else if(scissors1 == 1'b1 && paper2 == 1'b1)
 begin 
 result <= 2'b01;
 score1 <= score1 + 4'b0001;
+score2 <= score2;
 end
 
 else if (rock2 == 1'b1 && scissors1 == 1'b1)
 begin
 result <= 2'b10;
 score2 <= score2 + 4'b0001;
+score1 <= score1;
 end 
 else if (paper2 == 1'b1 && rock1 == 1'b1)
 begin
 result <= 2'b10;
 score2 <= score2 + 4'b0001;
+score1 <= score1;
 end
 else if(scissors2 == 1'b1 && paper1 == 1'b1)
 begin 
 result <= 2'b10;
 score2 <= score2 + 4'b0001;
+score1 <= score1;
 end
 else 
 begin
