@@ -72,6 +72,8 @@ end
 else 
 begin
 result <= 2'b00;
+score1 <= score1;
+score2 <= score2;
 
 end
 
